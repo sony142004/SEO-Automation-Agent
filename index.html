@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -16,14 +17,20 @@
                 <div class="logo-icon"></div>
                 <span>SEO Agent</span>
             </div>
-            <nav>
-                <div class="nav-item active">Dashboard</div>
-                <div class="nav-item">Content Log</div>
-                <div class="nav-item">Settings</div>
+            <nav class="nav-group">
+                <div class="nav-item active"><i class="fa-solid fa-house"></i>Dashboard</div>
+                <div class="nav-item"><i class="fa-solid fa-wand-sparkles"></i>Content Generator</div>
+                <div class="nav-item"><i class="fa-solid fa-magnifying-glass-chart"></i>Keyword Research</div>
+                <div class="nav-item"><i class="fa-solid fa-book"></i>Content Log</div>
+                <div class="nav-item"><i class="fa-solid fa-chart-line"></i>Analytics</div>
+                <div class="nav-item"><i class="fa-solid fa-gear"></i>Settings</div>
             </nav>
             <div class="agent-status">
                 <div class="status-pulse"></div>
-                <span>Agent: Active</span>
+                <div class="status-info">
+                    <span class="status-name">Agent: Active</span>
+                    <span class="status-label">Online</span>
+                </div>
             </div>
         </aside>
 
