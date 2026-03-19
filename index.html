@@ -36,42 +36,148 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <header>
-                <h1>SEO Performance Dashboard</h1>
-                <div class="date-picker">Last 7 Days</div>
-            </header>
+            <!-- Dynamic View Container -->
+            <div id="view-container">
+                
+                <!-- Dashboard View -->
+                <div id="dashboard-view" class="view active">
+                    <!-- Top Header -->
+                    <div class="top-header">
+                        <div class="search-container">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search analytics or content...">
+                        </div>
+                        <div class="header-actions">
+                            <div class="action-btn"><i class="fa-solid fa-bell"></i><span class="badge"></span></div>
+                            <div class="user-profile">
+                                <img src="https://ui-avatars.com/api/?name=Sowmya&background=00d2ff&color=fff" alt="User">
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Stats Grid -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <h3>Top Ranking</h3>
-                    <div class="stat-value">#1</div>
-                    <div class="stat-label">"AI Automation Tools"</div>
+                    <header class="dashboard-banner">
+                        <div class="banner-info">
+                            <h1>SEO Intelligence</h1>
+                            <p>Good morning, your automation is running smoothly.</p>
+                        </div>
+                    </header>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-file-signature"></i></div>
+                            <h3>Content Gen</h3>
+                            <div class="stat-value">124</div>
+                            <div class="stat-label"><i class="fa-solid fa-arrow-up"></i> 14% this month</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-key"></i></div>
+                            <h3>Keywords Found</h3>
+                            <div class="stat-value">842</div>
+                            <div class="stat-label"><i class="fa-solid fa-arrow-up"></i> 5 new high-intent</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-gauge-high"></i></div>
+                            <h3>SEO Score</h3>
+                            <div class="stat-value">94</div>
+                            <div class="stat-label"><i class="fa-solid fa-shield-check"></i> Excellent Health</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <h3>Active Automations</h3>
+                            <div class="stat-value">12</div>
+                            <div class="stat-label">Running live</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container"><canvas id="rankingChart"></canvas></div>
+                    <section class="activity-section">
+                        <h2>Recent Activity</h2>
+                        <div class="activity-list" id="activityList"></div>
+                    </section>
                 </div>
-                <div class="stat-card">
-                    <h3>Avg. CTR</h3>
-                    <div class="stat-value">12.4%</div>
-                    <div class="stat-label">+2.1% from last week</div>
+
+                <!-- Content Generator View -->
+                <div id="generator-view" class="view">
+                    <header class="view-header">
+                        <h1>Content Generator</h1>
+                        <p>Generate SEO-optimized content using AI.</p>
+                    </header>
+
+                    <div class="generator-layout">
+                        <div class="generator-main">
+                            <div class="input-card">
+                                <div class="input-group">
+                                    <label>Focus Keyword or Topic</label>
+                                    <input type="text" id="topicInput" placeholder="e.g., 'Benefits of AI for Small Business'">
+                                </div>
+                                <div class="controls-grid">
+                                    <div class="control-item">
+                                        <label>Content Type</label>
+                                        <select id="contentType">
+                                            <option>Blog Post</option>
+                                            <option>LinkedIn Post</option>
+                                            <option>Website Copy</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-item">
+                                        <label>Tone</label>
+                                        <select id="contentTone">
+                                            <option>Professional</option>
+                                            <option>Casual</option>
+                                            <option>Marketing</option>
+                                        </select>
+                                    </div>
+                                    <div class="control-item">
+                                        <label>Length</label>
+                                        <select id="contentLength">
+                                            <option>Short</option>
+                                            <option>Medium</option>
+                                            <option>Long</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button class="btn-generate" id="generateBtn">
+                                    <span>Generate Content</span>
+                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                </button>
+                            </div>
+
+                            <div class="output-card" id="outputCard">
+                                <div class="output-header">
+                                    <h3>Generated Output</h3>
+                                    <div class="output-actions">
+                                        <button class="icon-btn"><i class="fa-solid fa-copy"></i></button>
+                                        <button class="icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="icon-btn"><i class="fa-solid fa-rotate-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="output-content" id="outputArea">
+                                    <div class="shimmer-placeholder">
+                                        <div class="line"></div><div class="line short"></div><div class="line"></div>
+                                    </div>
+                                    <p class="placeholder-text">Your generated content will appear here...</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <aside class="generator-sidebar">
+                            <div class="sidebar-card">
+                                <h3>SEO Suggestions</h3>
+                                <div class="seo-gauge">
+                                    <div class="gauge-value">85</div>
+                                    <span class="gauge-label">Score</span>
+                                </div>
+                                <ul class="suggestions-list">
+                                    <li><i class="fa-solid fa-check"></i> Primary Keyword included</li>
+                                    <li><i class="fa-solid fa-circle-info"></i> Add more LSI keywords</li>
+                                    <li><i class="fa-solid fa-circle-info"></i> Improve readability</li>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <h3>Content Gen</h3>
-                    <div class="stat-value">28</div>
-                    <div class="stat-label">Posts this week</div>
-                </div>
+
             </div>
-
-            <!-- Chart Section -->
-            <div class="chart-container">
-                <canvas id="rankingChart"></canvas>
-            </div>
-
-            <!-- Recent Activity -->
-            <section class="activity-section">
-                <h2>Recent Content Generation</h2>
-                <div class="activity-list" id="activityList">
-                    <!-- Activity items will be injected by JS -->
-                </div>
-            </section>
         </main>
     </div>
     <script src="script.js"></script>
