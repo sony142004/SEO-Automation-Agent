@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Automation Agent | Live Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <span>SEO Agent</span>
+            </div>
+            <nav>
+                <div class="nav-item active">Dashboard</div>
+                <div class="nav-item">Content Log</div>
+                <div class="nav-item">Settings</div>
+            </nav>
+            <div class="agent-status">
+                <div class="status-pulse"></div>
+                <span>Agent: Active</span>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>SEO Performance Dashboard</h1>
+                <div class="date-picker">Last 7 Days</div>
+            </header>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Top Ranking</h3>
+                    <div class="stat-value">#1</div>
+                    <div class="stat-label">"AI Automation Tools"</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Avg. CTR</h3>
+                    <div class="stat-value">12.4%</div>
+                    <div class="stat-label">+2.1% from last week</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Content Gen</h3>
+                    <div class="stat-value">28</div>
+                    <div class="stat-label">Posts this week</div>
+                </div>
+            </div>
+
+            <!-- Chart Section -->
+            <div class="chart-container">
+                <canvas id="rankingChart"></canvas>
+            </div>
+
+            <!-- Recent Activity -->
+            <section class="activity-section">
+                <h2>Recent Content Generation</h2>
+                <div class="activity-list" id="activityList">
+                    <!-- Activity items will be injected by JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
